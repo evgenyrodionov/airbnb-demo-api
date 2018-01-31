@@ -28,6 +28,11 @@ const parseProductPage = () => {
     lng: $rd.lng,
     reviewsCount: $rd.visible_review_count,
     isSuperhost: $rd.primary_host.is_superhost,
+    rating: $rd.star_rating,
+    price: $rd.p3_event_data_logging.price,
+    bedsCount: $rd.listing_rooms
+      .reduce((bedsCount, { beds }) => bedsCount + beds
+        .reduce((subBedsCount, subBeds) => subBedsCount + subBeds.quantity, 0), 0),
   };
 };
 
