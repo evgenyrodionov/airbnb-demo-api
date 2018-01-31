@@ -17,7 +17,7 @@ const parseProductPage = () => {
     name: $rd.name,
     images: $rd.photos.map(photo => ({
       id: photo.id,
-      picture: photo.picture,
+      picture: photo.picture.replace('?aki_policy=large', ''),
       isProfessional: photo.is_professional,
       scrimColor: photo.scrim_color,
       caption: photo.caption,
